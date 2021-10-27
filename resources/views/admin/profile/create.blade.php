@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+@extends('layouts.profile')
+@section('title', 'プロフィール')
+@section('content')
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,6 +11,8 @@
         <title>MyNews1021-1</title>
     </head>
     <body>
-        <h1>Myニュース作成画面1021-1</h1>
+        <h1>MY　プロフィール</h1>
     </body>
 </html>
+
+@endsection
