@@ -1,18 +1,11 @@
 @extends('layouts.profile')
-@section('title', 'プロフィール')
+@section('title', 'ABCD')
 @section('content')
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>MyNews1021-1</title>
-    </head>
-    <body>
-        <h1>MY　プロフィール</h1>
-    </body>
-</html>
+        <h1>MY プロフィール</h1>
+        <p>ここの入力はセクションに挟まれる</p>
+
 
 @endsection
+@section("hoge","1028練習です")

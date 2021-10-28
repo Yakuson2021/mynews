@@ -27,6 +27,7 @@
     <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
     </head>
     <body>
+        @yield("hoge")練習と理解定着のためテスト入力1028-1
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
@@ -54,7 +55,9 @@
 
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
+                練習と理解定着のためテスト入力1028-2
                 @yield('content')
+                練習と理解定着のためテスト入力1028-3
             </main>
         </div>
     </body>
