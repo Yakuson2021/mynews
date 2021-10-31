@@ -27,7 +27,7 @@
     <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
     </head>
     <body>
-        @yield("hoge")練習と理解定着のためテスト入力1028-1
+        @yield("hogehoge")練習と理解定着のためテスト入力1028-1
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">

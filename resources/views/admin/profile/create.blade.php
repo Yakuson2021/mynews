@@ -7,5 +7,6 @@
         <p>ここの入力はセクションに挟まれる</p>
 
 
+
+@section("hogehoge","今日はいい天気")
 @endsection
-@section("hoge","1028練習です")
