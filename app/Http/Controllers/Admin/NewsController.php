@@ -12,11 +12,12 @@ class NewsController extends Controller
   }
   public function create(Request $request)
   {
+    // admin/news/createにリダイレクトする
+    return redirect('admin/news/create');
+  }
       // 以下を追記
       // Varidationを行う
-      $this->validate($request, News::$rules);
-      $news = new News;
-      $form = $request->all();
+
       // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
       if (isset($form['image'])) {
         $path = $request->file('image')->store('public/image');
@@ -31,8 +32,8 @@ class NewsController extends Controller
       // データベースに保存する
       $news->fill($form);
       $news->save();
-      return redirect('admin/news/create');
-  }
+     
+
   
   // 以下を追記
   public function index(Request $request)
