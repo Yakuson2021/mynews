@@ -8,6 +8,8 @@
                 <h2>ニュース新規作成</h2>
                 <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-data">
 
+ // 以下を追記
+
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -16,19 +18,19 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">タイトル</label>
+                        <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">本文</label>
+                        <label class="col-md-2" for="body">本文</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">画像</label>
+                        <label class="col-md-2" for="title">画像</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                         </div>
