@@ -5,6 +5,12 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
+
+// 冒頭に以下を追記
+use App\History;
+use Carbon\Carbon;
+
+
 class ProfileController extends Controller
 {
   public function add()
@@ -66,9 +72,17 @@ class ProfileController extends Controller
       // 送信されてきたフォームデータを格納する
       $profile_form = $request->all();
       unset($profile_form['_token']);
+      unset($profile_form['image']);
+      unset($profile_form['remove']);
 
       // 該当するデータを上書きして保存する
       $profile->fill($profile_form)->save();
+      
+                      // 以下を追記
+        $history = new History();
+        $history->news_id = $news->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
 
       return redirect('admin/profile/');
   }
