@@ -14,13 +14,13 @@
 
 
 @extends('layouts.admin')
-@section('title', 'ニュースの編集')
+@section('title', 'プロフィール画面の編集')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>ニュース編集</h2>
+                <h2>プロフィール画面の編集です</h2>
                 <form action="{{ action('Admin\ProfileController@update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
@@ -71,8 +71,8 @@
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
                         <ul class="list-group">
-                            @if ($news_form->histories != NULL)
-                                @foreach ($news_form->histories as $history)
+                            @if ($profile_form->histories != NULL)
+                                @foreach ($profile_form->histories as $history)
                                     <li class="list-group-item">{{ $history->edited_at }}</li>
                                 @endforeach
                             @endif
