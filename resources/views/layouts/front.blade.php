@@ -23,11 +23,10 @@
         <!-- Styles -->
         {{-- Laravel標準で用意されているCSSを読み込みます --}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        {{-- この章の後半で作成するCSSを読み込みます --}}
-    <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
+        {{-- 以下を追記 --}}
+        <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     </head>
     <body>
-        @yield("hogehoge")練習
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
@@ -43,7 +42,11 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
 
- {{-- 以下を追記 --}}
+                        </ul>
+
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            {{-- 以下を追記 --}}
                         <!-- Authentication Links -->
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
@@ -68,11 +71,6 @@
                                 </div>
                             </li>
                             @endguest
-                            {{-- 以上までを追記 --}}
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
                         </ul>
                     </div>
                 </div>

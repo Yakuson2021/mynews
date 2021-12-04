@@ -34,4 +34,11 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth');
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth'); // 追記
     Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth'); // 追記
+//Laravel 19のカリキュラムにて追記
 });
+Route::get('/', 'NewsController@index');
+
+//↓2021年12月4日（土）23：30　応用課題。
+//「/profile にアクセスが来たら ProfileController/index Action に渡すように」
+//ということだったので↓に記載。
+Route::get('/profile', 'ProfileController@index');
