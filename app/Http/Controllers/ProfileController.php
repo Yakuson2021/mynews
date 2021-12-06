@@ -11,6 +11,8 @@ class ProfileController extends Controller
 
 //↓2021年12月4日（土）22：23　NewsControllerから引用。
 //カリキュラム19の内容になぞらえるため。
+//つまり、Modelファイル（mynews/app/Profile.php）
+//の情報をとってきているコードと認識している↓
 public function index(Request $request)
 {
     $posts = Profile::all()->sortByDesc('updated_at');
@@ -32,3 +34,4 @@ public function index(Request $request)
 
 }
 }
+

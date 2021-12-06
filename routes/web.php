@@ -39,6 +39,5 @@ Route::group(['prefix' => 'admin'], function() {
 Route::get('/', 'NewsController@index');
 
 //↓2021年12月4日（土）23：30　応用課題。
-//「/profile にアクセスが来たら ProfileController/index Action に渡すように」
-//ということだったので↓に記載。
+//「/profile にアクセスが来たら ProfileController/index Action に渡す」に対応
 Route::get('/profile', 'ProfileController@index');
