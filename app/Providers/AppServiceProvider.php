@@ -15,17 +15,11 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-}
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
-    // 以下を追記
-    if (\App::environment('production')) {
-        \URL::forceScheme('https')；
+        // 以下を追記
+        if (\App::environment('production')) {
+            \URL::forceScheme('https');
+        }
     }
 }
