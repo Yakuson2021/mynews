@@ -13,7 +13,7 @@
 </html>
 
 
-@extends('layouts.admin')
+@extends('layouts.profile')
 @section('title', 'プロフィール画面の編集')
 
 @section('content')
