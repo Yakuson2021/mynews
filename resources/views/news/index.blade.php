@@ -10,13 +10,12 @@
                         <div class="col-md-6">
                             <div class="caption mx-auto">
                                 <div class="image">
-                                    @if ($headline->image_path)
-                                        <img src="{{ asset('storage/image/' . $headline->image_path) }}">
-                                    @endif
+                                     @if ($headline->image_path)
+                                          <img src="{{ $headline->image_path }}">
+                                     @endif
                                 </div>
                                 <div class="title p-2">
-                                    //2021/12/9　23時
-                                    //h1→h5に変更　文字も650→1500に
+                                    //2021/12/9　23時　h1→h5に変更　文字も650→1500に
                                     <h5>{{ str_limit($headline->title, 1500) }}</h5>
                                 </div>
                             </div>
@@ -45,11 +44,11 @@
                                     {{ str_limit($post->body, 300) }}
                                 </div>
                             </div>
-                            <div class="image col-md-6 text-right mt-4">
-                                @if ($post->image_path)
-                                    <img src="{{ asset('storage/image/' . $post->image_path) }}">
-                                @endif
-                            </div>
+                                <div class="image col-md-6 text-right mt-4">
+                                     @if ($post->image_path)
+                                          <img src="{{ $post->image_path }}">
+                                     @endif
+                                </div>
                         </div>
                     </div>
                     <hr color="#c0c0c0">
