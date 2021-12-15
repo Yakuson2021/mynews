@@ -46,10 +46,10 @@ class ProfileController extends Controller
       $cond_title = $request->cond_title;
       if ($cond_title != '') {
           // 検索されたら検索結果を取得する
-          $posts = News::where('title', $cond_title)->get();
+          $posts = Profile::where('name', $cond_title)->get();
       } else {
           // それ以外はすべてのニュースを取得する
-          $posts = News::all();
+          $posts = Profile::all();
       }
       return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
@@ -71,8 +71,9 @@ class ProfileController extends Controller
       // 送信されてきたフォームデータを格納する
       $profile_form = $request->all();
       unset($profile_form['_token']);
-      unset($profile_form['image']);
-      unset($profile_form['remove']);
+      // 20211215指摘により無効化
+      // unset($profile_form['image']);
+      // unset($profile_form['remove']);
 
       // 該当するデータを上書きして保存する
       $profile->fill($profile_form)->save();
