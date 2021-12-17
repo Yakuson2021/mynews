@@ -100,7 +100,7 @@ class NewsController extends Controller
 
                 // 以下を追記
         $history = new History();
-        $history->news_id = $news->id;
+        $history->profile_id = $news->id;
         $history->edited_at = Carbon::now();
         $history->save();
         

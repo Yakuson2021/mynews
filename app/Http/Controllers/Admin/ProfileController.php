@@ -71,7 +71,7 @@ class ProfileController extends Controller
       // 送信されてきたフォームデータを格納する
       $profile_form = $request->all();
       unset($profile_form['_token']);
-      // 20211215指摘により無効化
+      // 20211215課題FB無効化
       // unset($profile_form['image']);
       // unset($profile_form['remove']);
 
@@ -79,8 +79,8 @@ class ProfileController extends Controller
       $profile->fill($profile_form)->save();
       
                       // 以下を追記
-        $history = new History();
-        $history->news_id = $news->id;
+        $history = new ProfileHistory();
+        $history->profile_id = $profile->id;
         $history->edited_at = Carbon::now();
         $history->save();
 
