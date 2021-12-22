@@ -80,15 +80,18 @@ class NewsController extends Controller
       $this->validate($request, News::$rules);
       // News Modelからデータを取得する
       $news = News::find($request->id);
-      // 送信されてきたフォームデータを格納する
+      // 送信されてきたフォームデータを全部格納する
       $news_form = $request->all();
       
+      //画像のデータをどう更新するか、選んでいるファイルと削除
       if ($request->remove == 'true') {
           $news_form['image_path'] = null;
       } elseif ($request->file('image')) {
          $path = Storage::disk('s3')->putFile('/',$news_form['image'],'public');
          $news->image_path = Storage::disk('s3')->url($path);
-      } else {
+      } else
+      
+      {
           $news_form['image_path'] = $news->image_path;
       }
 

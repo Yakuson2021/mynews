@@ -10,6 +10,17 @@ use App\History;
 use Carbon\Carbon;
 
 
+//  2021/12/17　URL開けれるかの確認結果
+//  /admin/news/create→OK
+//  /admin/profile/create→OK
+//  /admin/profile/edit→NG  ★
+//  /admin/profile→NG   ★
+//  /admin/news→OK
+//  /admin/news/edit→OK
+//  /admin/new/delete→OK
+//  /profile→OK
+//  /→OK
+
 class ProfileController extends Controller
 {
   public function add()

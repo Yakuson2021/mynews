@@ -46,3 +46,14 @@ Route::get('/', 'NewsController@index');
 //↓2021年12月4日（土）23：30　応用課題。
 //「/profile にアクセスが来たら ProfileController/index Action に渡す」に対応
 Route::get('/profile', 'ProfileController@index');
+
+//  2021/12/17　URL開けれるかの確認結果
+//  /admin/news/create→OK
+//  /admin/profile/create→OK
+//  /admin/profile/edit→NG  ★
+//  /admin/profile→OK
+//  /admin/news→OK
+//  /admin/news/edit→OK
+//  /admin/new/delete→OK
+//  /profile→OK
+//  /→OK

@@ -1,5 +1,4 @@
 @extends('layouts.front')
-
 @section('content')
     <div class="container">
         <hr color="#c0c0c0">
@@ -11,12 +10,12 @@
                             <div class="caption mx-auto">
                                 <div class="image">
                                      @if ($headline->image_path)
-                                          <img src="{{ $headline->image_path }}">
+                                     　    <img src="{{ asset('storage/image/' . $headline->image_path) }}">
+
                                      @endif
                                 </div>
                                 <div class="title p-2">
-                                    //2021/12/9　23時　h1→h5に変更　文字も650→1500に
-                                    <h5>{{ str_limit($headline->title, 1500) }}</h5>
+                                    <h1>{{ str_limit($headline->title, 70) }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -38,14 +37,15 @@
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
                                 <div class="title">
-                                    {{ str_limit($post->title, 300) }}
+                                    {{ str_limit($post->title, 150) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($post->body, 300) }}
+                                    {{ str_limit($post->body, 1500) }}
                                 </div>
                             </div>
                                 <div class="image col-md-6 text-right mt-4">
                                      @if ($post->image_path)
+                                            <img src="{{ asset('storage/image/' . $post->image_path) }}">
                                           <img src="{{ $post->image_path }}">
                                      @endif
                                 </div>

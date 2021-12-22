@@ -1,25 +1,66 @@
 @extends('layouts.admin')
 @section('title', '登録情報')
 @section('content')
+
+
     <div class="container">
         <div class="row">
-            <h2>ニュース一覧</h2>
+            <div class="col-md-8 mx-auto">
+                <h2>自己紹介</h2>
+                <form action="{{ action('Admin\ProfileController@create') }}" method="post" enctype="multipart/form-data">
+
+                    @if (count($errors) > 0)
+                        <ul>
+                            @foreach($errors->all() as $e)
+                                <li>{{ $e }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2">氏名(name)</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                        </div>
+                    </div>
+
+<div class="form-group row">
+                        <label class="col-md-2">性別(gender)</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
+                        </div>
+                    </div>
+
+<div class="form-group row">
+                        <label class="col-md-2">趣味(hobby)</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="hobby" rows="20">{{ old('hobby') }}</textarea>
+                        </div>
+                    </div>
+                    
+           
+           
+           
+<div class="form-group row">
+                        <label class="col-md-2">自己紹介欄(introduction)</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
+                        </div>
+                    </div>
+                   
+            </div>
         </div>
+    </div>
+
+
+    <div class="container">
+        
         <div class="row">
             <div class="col-md-4">
             </div>
             <div class="col-md-8">
                 <form action="{{ action('Admin\ProfileController@index') }}" method="get">
-                    <div class="form-group row">
-                        <label class="col-md-2">タイトル</label>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" name="cond_title" value={{ $cond_title }}>
-                        </div>
-                        <div class="col-md-2">
-                            {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="検索">
-                        </div>
-                    </div>
+
                 </form>
             </div>
         </div>
@@ -63,19 +104,3 @@
     </div>
 @endsection
 
-//2021 12/15課題　
-//ここのページは　Routing→「Route::get('profile', 'Admin\ProfileController@index'); 」
-//　　　　　　　　コントローラー→「Admin/Profile/Controller.php」の、「admin.profile.index」
-//              　に対応する、ログイン後のプロフィール画面を出したい
-
-//　　　　　　　　プロフィール画面のモデルは「admin/profile/create.blade.php」を参考にプロフィール画面を体裁よく出したい
-//　　　　　　　　ただし、Controllerのアクションとして「deleteアクション」と「editアクション」を表示しないといけない
-
-//<div>
-//                                            <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
-//                                       </div>
-//                                       <div>
-//                                           <a href="{{ action('Admin\NewsController@delete', ['id' => $news->id]) }}">削除</a>
-//                                       </div>
-//
-//　とりあえず、「admin/news/index.php」の体裁で上記のリンクを実装、その次に上記の「編集」「削除」の実装を

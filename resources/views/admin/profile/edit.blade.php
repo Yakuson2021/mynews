@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>プロフィールページです</title>
+        <title>プロフィール画面の編集ページ</title>
     </head>
     <body>
-        <h1>プロフィールページ</h1>
+        <h1>プロフィール画面の編集ページ</h1>
     </body>
 </html>
 
