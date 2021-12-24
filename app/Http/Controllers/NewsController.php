@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\HTML;
 // 追記
 use App\News;
 
+
+// ↓これは何を意味しているコードか？　
+
 class NewsController extends Controller
 {
     public function index(Request $request)

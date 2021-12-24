@@ -7,6 +7,7 @@ use App\Profile;
 
 // 冒頭に以下を追記
 use App\History;
+use App\ProfileHistory;
 use Carbon\Carbon;
 
 
@@ -68,13 +69,13 @@ class ProfileController extends Controller
   {
       // News Modelからデータを取得する
       $profile = Profile::find($request->id);
-
       return view('admin.profile.edit', ['profile_form' => $profile]);
   }
 
 
   public function update(Request $request)
   {
+      //dd($request);
       // Validationをかける
       $this->validate($request, Profile::$rules);
       // News Modelからデータを取得する
