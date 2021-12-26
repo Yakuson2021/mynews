@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>プロフィール画面の編集ページ</title>
-    </head>
-    <body>
-        <h1>プロフィール画面の編集ページ</h1>
-    </body>
-</html>
-
-
 @extends('layouts.profile')
 @section('title', 'プロフィール画面の編集')
 
@@ -73,9 +58,9 @@
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
                         <ul class="list-group">
-                            @if ($profile_form->histories != NULL)
-                                @foreach ($profile_form->histories as $history)
-                                    <li class="list-group-item">{{ $history->edited_at }}</li>
+                            @if ($profile_form->profile_histories != NULL)
+                                @foreach ($profile_form->profile_histories as $profile_history)
+                                    <li class="list-group-item">{{ $profile_history->edited_at }}</li>
                                 @endforeach
                             @endif
                         </ul>

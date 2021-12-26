@@ -13,3 +13,5 @@ class History extends Model
         'edited_at' => 'required',
     );    //
 }
+
+
