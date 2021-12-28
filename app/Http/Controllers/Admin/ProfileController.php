@@ -26,7 +26,7 @@ class ProfileController extends Controller
 {
   public function add()
   {
-      return view('admin.profile.create');
+      return view('admin/profile/create');
   }
   
   public function create(Request $request)
@@ -63,13 +63,13 @@ class ProfileController extends Controller
           // それ以外はすべてのニュースを取得する
           $posts = Profile::all();
       }
-      return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+      return view('admin/profile/index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
  public function edit(Request $request)
   {
       // News Modelからデータを取得する
       $profile = Profile::find($request->id);
-      return view('admin.profile.edit', ['profile_form' => $profile]);
+ return view('admin/profile/edit', ['profile_form' => $profile]);     
   }
 
 

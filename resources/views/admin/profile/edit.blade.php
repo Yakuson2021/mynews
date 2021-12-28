@@ -44,7 +44,7 @@
                             
                         </div>
                     <div class="form-group row">
-                        <div class="col-md-10">
+                    <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $profile_form->id }}">
                             {{ csrf_field() }}
 
@@ -59,8 +59,8 @@
                         <h2>編集履歴</h2>
                         <ul class="list-group">
                             @if ($profile_form->profile_histories != NULL)
-                                @foreach ($profile_form->profile_histories as $profile_history)
-                                    <li class="list-group-item">{{ $profile_history->edited_at }}</li>
+                                @foreach ($profile_form->profile_histories as $profilehistory)
+                                    <li class="list-group-item">{{ $profilehistory->edited_at }}</li>
                                 @endforeach
                             @endif
                         </ul>

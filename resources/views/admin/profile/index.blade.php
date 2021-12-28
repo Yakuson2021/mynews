@@ -25,7 +25,7 @@
                             <tr>
                                 <th width="10%">ID</th>
                                 <th width="20%">名前</th>
-                                <th width="50%">自己紹介</th>
+                                <th width="30%">自己紹介</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
@@ -33,7 +33,7 @@
                             @foreach($posts as $profile)
                                 <tr>
                                     <th>{{ $profile->id }}</th>
-                                    <td>{{ str_limit($profile->name, 100) }}</td>
+                                    <td>{{ str_limit($profile->name, 100) }}プロフィール</td>
                                     <td>{{ str_limit($profile->introduction, 250) }}</td>
                                     <td>
                                         <div>
