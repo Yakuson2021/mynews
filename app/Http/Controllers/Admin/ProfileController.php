@@ -49,7 +49,7 @@ class ProfileController extends Controller
       $profile->save();
       
       
-      return redirect('admin/profile/create');
+      return redirect('admin/profile/');
   }
 
   // 以下を追記
